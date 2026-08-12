@@ -1,9 +1,25 @@
+<!-- src/app.html — add font links inside <head>, keep %sveltekit.head%/%sveltekit.body% -->
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="text-scale" content="scale" />
+
+		<link rel="preconnect" href="https://api.fontshare.com" />
+		<link
+			href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=general-sans@400,500,600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Prevent flash of wrong theme: set data-theme before paint -->
+		<script>
+			(function () {
+				var d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.setAttribute('data-theme', d);
+			})();
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
