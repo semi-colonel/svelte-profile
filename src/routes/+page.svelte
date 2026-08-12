@@ -28,8 +28,35 @@
 				<a href="#contact" class="btn btn-ghost">Get in touch</a>
 			</div>
 		</div>
-		<div class="terminal" aria-hidden="true">
-			<div class="terminal-bar"><span></span><span></span><span></span></div>
+		<!-- <div class="terminal" aria-hidden="true">
+			<div class="terminal-bar"><span></span><span></span><span></span></div> -->
+		<div class="hero-side">
+			<div class="profile-card">
+				<img
+					src="/DSC00310.JPG"
+					alt="Portrait of Vaibhav Salunke"
+					width="320"
+					height="320"
+					loading="lazy"
+				/>
+				<div class="profile-meta">
+					<p class="profile-name">Vaibhav Salunke</p>
+					<p class="profile-tag">Developer · Homelab · Electronics</p>
+				</div>
+			</div>
+
+			<div class="terminal" aria-hidden="true">
+				<div class="terminal-bar"><span></span><span></span><span></span></div>
+				<pre>$ whoami
+		<span class="accent">vaibhav@homelab</span>
+
+		$ uptime
+		14 days, 6:32 — all services nominal
+
+		$ ls ~/projects
+		media-stack/  dns-sinkhole/
+		status-page/  this-site/</pre>
+		</div>
 			<pre>$ whoami
 <span class="accent">vaibhav@homelab</span>
 
@@ -71,6 +98,49 @@ status-page/  this-site/</pre>
 	</div>
 </section>
 
+<section id="electronics">
+	<div class="container electronics-grid">
+		<div>
+			<p class="eyebrow">Hardware</p>
+			<h2>Electronics tinkering</h2>
+			<p class="muted">
+				When I’m not breaking Docker, I’m usually burning fingers on soldering irons –
+				building small boards, fixing random gear, or wiring up sensors to talk to my
+				homelab.
+			</p>
+		</div>
+
+		<div class="electronics-cards">
+			<div class="electronics-card">
+				<h3>Microcontrollers & sensors</h3>
+				<p>
+					ESP32 / Arduino projects that bridge the physical world to my network –
+					temperature sensors, presence detectors, and little status LEDs driven over
+					MQTT.
+				</p>
+				<ul>
+					<li>ESP32 / ESP8266</li>
+					<li>MQTT, Wi‑Fi</li>
+					<li>Home‑rolled PCB prototypes</li>
+				</ul>
+			</div>
+
+			<div class="electronics-card">
+				<h3>Repair & teardown</h3>
+				<p>
+					I like opening up old hardware, tracing faults, and bringing devices back to
+					life instead of throwing them away.
+				</p>
+				<ul>
+					<li>Basic diagnostics with a multimeter</li>
+					<li>Reflowing and re‑soldering components</li>
+					<li>Documenting what I find as notes</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="about">
 	<div class="container about-grid">
 		<div>
@@ -92,6 +162,59 @@ status-page/  this-site/</pre>
 </section>
 
 <style>
+	.electronics-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+		gap: var(--space-12);
+		align-items: start;
+	}
+
+	.electronics-cards {
+		display: grid;
+		gap: var(--space-6);
+	}
+
+	.electronics-card {
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.electronics-card h3 {
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-3);
+	}
+
+	.electronics-card p {
+		color: var(--color-text-muted);
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-3);
+	}
+
+	.electronics-card ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		font-size: var(--text-xs);
+		color: var(--color-text-faint);
+	}
+
+	.electronics-card li {
+		border: 1px solid var(--color-divider);
+		border-radius: var(--radius-full);
+		padding: var(--space-1) var(--space-3);
+	}
+
+	@media (max-width: 768px) {
+		.electronics-grid {
+			grid-template-columns: 1fr;
+		}
+	}
 	.hero {
 		padding-block: var(--space-32) var(--space-20);
 		position: relative;
@@ -102,6 +225,52 @@ status-page/  this-site/</pre>
 		grid-template-columns: 1.2fr 0.8fr;
 		gap: var(--space-12);
 		align-items: center;
+	}
+	.hero-side {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-6);
+	align-items: stretch;
+	}
+
+	.profile-card {
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4);
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.profile-card img {
+		border-radius: var(--radius-full);
+		object-fit: cover;
+		width: 96px;
+		height: 96px;
+	}
+
+	.profile-meta {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.profile-name {
+		font-weight: 600;
+		font-size: var(--text-lg);
+	}
+
+	.profile-tag {
+		color: var(--color-text-muted);
+		font-size: var(--text-sm);
+	}
+
+	@media (max-width: 768px) {
+		.hero-side {
+			order: -1; /* show photo above text on mobile, optional */
+		}
 	}
 	.eyebrow {
 		color: var(--color-primary);
@@ -285,4 +454,3 @@ status-page/  this-site/</pre>
 		}
 	}
 </style>
-// trigger build
