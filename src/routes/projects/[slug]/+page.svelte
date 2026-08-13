@@ -2,6 +2,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { projects } from '$lib/data/projects';
+    import { resolve } from 'path';
 
 	const project = $derived(projects.find((p) => p.slug === $page.params.slug));
 </script>
@@ -14,7 +15,7 @@
 {#if project}
 	<section class="detail">
 		<div class="container">
-			<a href="/projects" class="back-link">&larr; All projects</a>
+			<a href={resolve("/projects")} class="back-link">&larr; All projects</a>
 			<span class="card-tag">{project.tag}</span>
 			<h1>{project.title}</h1>
 			<p class="lead">{project.longDescription ?? project.description}</p>
@@ -27,8 +28,8 @@
 
 			{#if project.links?.length}
 				<div class="links">
-					{#each project.links as link}
-						<a href={link.href} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+					{#each project.links as link (link)}
+						<a href={resolve(link.href)} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
 							{link.label}
 						</a>
 					{/each}

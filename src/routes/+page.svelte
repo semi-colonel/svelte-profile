@@ -51,7 +51,7 @@
 		<span class="accent">vaibhav@homelab</span>
 
 		$ uptime
-		14 days, 6:32 — all services nominal
+		14 days, 6:32 -- all services nominal
 
 		$ ls ~/projects
 		media-stack/  dns-sinkhole/
