@@ -26,3 +26,4 @@ You can preview the production build with `npm run preview`.
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
 <!-- deploy trigger: 2026-09-18 -->
+<!-- deploy trigger 2: 2026-09-18 fixed deploy command -->
