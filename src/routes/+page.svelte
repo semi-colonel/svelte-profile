@@ -80,9 +80,28 @@ status-page/  this-site/</pre>
 		</div>
 		<div class="projects-grid">
 			{#each featured as project (project.slug)}
-				<a class="card" href={resolve('/projects/[slug]', { slug: project.slug })}>					
-					<span class="card-tag">{project.tag}</span>
-					<h3>{project.title}</h3>
+				<a class="card" href={resolve('/projects/[slug]', { slug: project.slug })}>
+					<div class="card-head">
+						{#if project.logo}
+							<img
+								src={project.logo}
+								alt={`${project.title} logo`}
+								class="project-logo"
+								width="32"
+								height="32"
+								loading="lazy"
+							/>
+						{:else}
+							<div class="project-logo default-logo" aria-hidden="true">
+								&lt;&gt;
+							</div>
+						{/if}
+						<div class="card-title-block">
+							<span class="card-tag">{project.tag}</span>
+							<h3>{project.title}</h3>
+						</div>
+					</div>
+
 					<p>{project.description}</p>
 					<div class="stack">
 						{#each project.stack as tech (tech)}
@@ -250,7 +269,34 @@ status-page/  this-site/</pre>
 		width: 96px;
 		height: 96px;
 	}
+	.card-head {
+	display: flex;
+	align-items: center;
+	gap: var(--space-4);
+	margin-bottom: var(--space-4);
+	}
 
+	.card-title-block h3 {
+		margin-bottom: var(--space-2);
+	}
+
+	.project-logo {
+		width: 32px;
+		height: 32px;
+		border-radius: var(--radius-md);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-surface-offset);
+		border: 1px solid var(--color-border);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--color-primary);
+	}
+
+	.project-logo.default-logo {
+		font-family: var(--font-display);
+	}
 	.profile-meta {
 		display: flex;
 		flex-direction: column;
