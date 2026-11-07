@@ -19,7 +19,7 @@
 	});
 
 	const navLinks = [
-		{ href: '/#work', label: 'Work' },
+		{ href: '/#work', label: 'Work' },\n\t\t{ href: '/experience', label: 'Experience' },
 		{ href: '/#about', label: 'About' },
 		{ href: '/#contact', label: 'Contact' }
 	];
@@ -64,7 +64,7 @@
 	<div class="container footer-row">
 		<div>
 			<h3>Let's talk.</h3>
-			<p class="muted">vaibhav [at] vbvslnk.org</p>
+			<p class="muted"><a href="mailto:vaibhav@vbvslnk.org">vaibhav@vbvslnk.org</a></p>
 		</div>
 		<div class="socials">
 			<a href="https://github.com/semi-colonel" target="_blank" rel="noopener noreferrer">GitHub</a>
