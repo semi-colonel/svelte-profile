@@ -24,7 +24,8 @@
 			</p>
 			<div class="cta-row">
 				<a href="#work" class="btn btn-primary">See my projects</a>
-				<a href="#contact" class="btn btn-ghost">Get in touch</a>\n\t\t\t\t<a href="/experience" class="btn btn-ghost">Professional experience</a>
+				<a href="#contact" class="btn btn-ghost">Get in touch</a>
+\t\t\t\t<a href="/experience" class="btn btn-ghost">Professional experience</a>
 			</div>
 		</div>
 		<!-- <div class="terminal" aria-hidden="true">
