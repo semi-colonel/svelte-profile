@@ -27,3 +27,5 @@ You can preview the production build with `npm run preview`.
 
 <!-- deploy trigger: 2026-09-18 -->
 <!-- deploy trigger 2: 2026-09-18 fixed deploy command -->
+
+Production portfolio: https://portfolio.vbvslnk.org
