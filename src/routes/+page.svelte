@@ -26,6 +26,7 @@
 				<a href="#work" class="btn btn-primary">See my projects</a>
 				<a href="#contact" class="btn btn-ghost">Get in touch</a>
 \t\t\t\t<a href="/experience" class="btn btn-ghost">Professional experience</a>
+				<a href="https://docs.google.com/document/d/1ElqFP7cjvZJlhA_f6EpY-MZGHZ_yRSs9DuAjOteiP1I/export?format=pdf" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
 			</div>
 		</div>
 		<!-- <div class="terminal" aria-hidden="true">
