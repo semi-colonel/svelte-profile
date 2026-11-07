@@ -17,8 +17,13 @@
   let activeLayer = $state<Layer>('All');
   let selectedId = $state('openwrt');
   const selected = $derived(components.find((component) => component.id === selectedId) ?? components[0]);
-  const visible = $derived(components.filter((component) => activeLayer === 'All' || component.layer === activeLayer));
   const byId = (id: string) => components.find((component) => component.id === id)!;
+  const chooseLayer = (layer: Layer) => {
+    activeLayer = layer;
+    if (layer !== 'All' && selected.layer !== layer) {
+      selectedId = components.find((component) => component.layer === layer)?.id ?? selectedId;
+    }
+  };
 </script>
 
 <svelte:head>
@@ -34,15 +39,17 @@
 
   <div class="filters" role="group" aria-label="Filter architecture components">
     {#each layers as layer}
-      <button type="button" class:active={activeLayer === layer} aria-pressed={activeLayer === layer} onclick={() => activeLayer = layer}>{layer}</button>
+      <button type="button" class:active={activeLayer === layer} aria-pressed={activeLayer === layer} onclick={() => chooseLayer(layer)}>{layer}</button>
     {/each}
   </div>
+
+  <div class="legend" aria-label="Diagram legend"><span><i class="key key-node"></i> Select a component for details</span><span><i class="key key-line"></i> Conceptual relationship, not a physical cable</span></div>
 
   <div class="explorer">
     <div class="diagram" aria-label="Conceptual homelab architecture">
       <svg viewBox="0 0 100 105" preserveAspectRatio="none" aria-hidden="true">
         {#each connections as [from, to]}
-          <line x1={byId(from).x} y1={byId(from).y} x2={byId(to).x} y2={byId(to).y} class:dimmed={activeLayer !== 'All' && !(byId(from).layer === activeLayer && byId(to).layer === activeLayer)} />
+          <line x1={byId(from).x} y1={byId(from).y} x2={byId(to).x} y2={byId(to).y} class:dimmed={activeLayer !== 'All' && byId(from).layer !== activeLayer && byId(to).layer !== activeLayer} />
         {/each}
       </svg>
       {#each components as component (component.id)}
@@ -54,7 +61,7 @@
           style:left={component.x + '%'}
           style:top={(component.y / 105) * 100 + '%'}
           aria-pressed={selectedId === component.id}
-          onclick={() => { selectedId = component.id; activeLayer = 'All'; }}
+          onclick={() => { selectedId = component.id; }}
         >
           <span class="node-title">{component.title}</span>
           <span class="node-subtitle">{component.subtitle}</span>
@@ -76,6 +83,8 @@
     </aside>
   </div>
 
+  <div class="mobile-picker"><label for="component-select">Jump to a component</label><select id="component-select" value={selectedId} onchange={(event) => selectedId = event.currentTarget.value}>{#each components.filter((component) => activeLayer === 'All' || component.layer === activeLayer) as component}<option value={component.id}>{component.title}</option>{/each}</select></div>
+
   <div class="notes">
     <h2>How I approach the lab</h2>
     <div class="note-grid">
@@ -95,6 +104,11 @@
   .filters{display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-6)}
   .filters button{border:1px solid var(--color-border);border-radius:var(--radius-full);padding:var(--space-2) var(--space-4);background:var(--color-surface);color:var(--color-text);font-weight:600;font-size:var(--text-sm);cursor:pointer}
   .filters button.active{background:var(--color-primary);color:var(--color-text-inverse);border-color:var(--color-primary)}
+  .legend{display:flex;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-4);font-size:var(--text-xs);color:var(--color-text-muted)}
+  .legend span{display:inline-flex;align-items:center;gap:8px}
+  .key{display:inline-block;width:14px;height:12px;border:2px solid var(--color-primary);border-radius:3px}
+  .key-line{height:0;border:0;border-top:2px solid var(--color-primary);border-radius:0}
+  .mobile-picker{display:none}
   .explorer{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:var(--space-5);align-items:stretch}
   .diagram{position:relative;min-height:570px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;background-image:radial-gradient(var(--color-divider) 1px,transparent 1px);background-size:18px 18px}
   .diagram svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -118,5 +132,5 @@
   .note-grid article{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6)}
   .note-grid h3{font-size:var(--text-lg);margin-bottom:var(--space-3)}
   .note-grid p{color:var(--color-text-muted);line-height:1.6}
-  @media(max-width:800px){.explorer{grid-template-columns:1fr}.diagram{min-height:510px}.note-grid{grid-template-columns:1fr}.node{width:29%;padding:8px 3px}.node-subtitle{font-size:.59rem}}
+  @media(max-width:800px){.mobile-picker{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-5)}.mobile-picker select{padding:var(--space-3);border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface);color:var(--color-text)}.explorer{grid-template-columns:1fr}.diagram{min-height:510px}.note-grid{grid-template-columns:1fr}.node{width:29%;padding:8px 3px}.node-subtitle{font-size:.59rem}}
 </style>
