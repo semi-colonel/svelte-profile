@@ -1,69 +1,8 @@
-// src/lib/data/projects.ts
-export type Project = {
-	slug: string;
-	title: string;
-	tag: string;
-	description: string;
-	longDescription?: string;
-	stack: string[];
-	links?: { label: string; href: string }[];
-	logo?: string;
-};
-
+export type Project = { slug: string; title: string; tag: string; description: string; longDescription?: string; stack: string[]; links?: { label: string; href: string }[]; logo?: string; };
 export const projects: Project[] = [
-	{
-		slug: 'media-stack',
-		title: 'Jellyfin: Self-hosted media stack',
-		tag: 'Media Management',
-		description:
-			'Dockerized Jellyfin.',
-		longDescription:
-			'A fully self-hosted media stack running on a homelab server. Jellyfin handles playback, Sonarr and Radarr automate library management, and everything sits behind a Cloudflare Tunnel so no ports are exposed to the public internet.',
-		stack: ['Docker', 'Nginx', 'Cloudflare Tunnel','Homelab'],
-		links: [{ label: 'View the website!', href: 'https://jellyfin.vbvslnk.org/' }],
-		logo:'https://raw.githubusercontent.com/jellyfin/jellyfin-ux/a40ffbcfd894fa2ceb7025286330b2c38e17f2c0/logos/SVG/jellyfin-icon--color-on-dark.svg',
-
-	},
-	{
-		slug: 'immich',
-		title: 'Immich - A Self Hosted Photo and Video Management solution',
-		tag: 'Media Management',
-		description: 'My own personal Google Photos, ',
-		longDescription:
-			'A minimal status dashboard that polls each self-hosted service on a 60-second interval and stores history in SQLite, with Grafana for longer-term trend charts.',
-		stack: ['TypeScript','Homelab'],
-		links: [{ label: 'View on GitHub', href: 'https://immich.vbvslnk.org/' }],
-		logo: 'https://raw.githubusercontent.com/immich-app/immich/a939561e70f437dc7ab3ee2d8b859cc654d6cb3e/design/immich-logo.svg'
-	},
-	{
-		slug: 'dns-sinkhole',
-		title: 'Network-wide ad blocking',
-		tag: 'Networking',
-		description:
-			'Pi-hole + Unbound running on a Raspberry Pi cluster with automatic failover between two nodes.',
-		longDescription:
-			'Two Raspberry Pis run Pi-hole with Unbound as a recursive resolver, load balanced with Keepalived so DNS keeps working even if one node goes down.',
-		stack: ['Pi-hole', 'Unbound', 'Keepalived','Homelab'],
-		links: [{ label: 'View on GitHub', href: 'https://github.com/yourusername/dns-sinkhole' }]
-	},
-	{
-		slug: 'status-page',
-		title: 'Status & uptime dashboard',
-		tag: 'Monitoring',
-		description: 'A lightweight status page for every homelab service, polling health checks every 60 seconds.',
-		longDescription:
-			'A minimal status dashboard that polls each self-hosted service on a 60-second interval and stores history in SQLite, with Grafana for longer-term trend charts.',
-		stack: ['SvelteKit', 'SQLite', 'Grafana'],
-		links: [{ label: 'View on GitHub', href: 'https://github.com/yourusername/status-page' }]
-	},
-	{
-		slug: 'this-site',
-		title: 'This site',
-		tag: 'Web',
-		description: 'A SvelteKit portfolio deployed on Cloudflare Pages, connected to my own domain.',
-		longDescription:
-			'This profile site itself — built with SvelteKit, statically prerendered, and deployed to Cloudflare Pages under profile.vbvslnk.org.',
-		stack: ['SvelteKit', 'Cloudflare Pages'],
-		links: [{ label: 'View on GitHub', href: 'https://github.com/yourusername/profile-site' }]
-	}
+ { slug:'media-stack', title:'Containerized media services', tag:'Docker & Linux', description:'Operating a self-hosted media environment with Docker Compose and Linux networking.', longDescription:'A hands-on homelab environment for maintaining containerized media applications, managing service dependencies, troubleshooting networking, and working with VPN-isolated workloads. The stack includes media management tools such as Sonarr, Radarr, and qBittorrent.', stack:['Docker Compose','Linux','Networking','VPN'] },
+ { slug:'immich', title:'Self-hosted photo management', tag:'Self-hosting', description:'Exploring self-hosted photo and video management with Immich.', longDescription:'A personal self-hosting project focused on photo and video management, deployment, and ongoing service administration.', stack:['Immich','Self-hosting','Linux'] },
+ { slug:'dns-sinkhole', title:'Home network DNS & filtering', tag:'Networking', description:'Managing local DNS and network-wide filtering with OpenWrt and AdGuard Home.', longDescription:'Hands-on configuration and troubleshooting of DNS rewrites, DHCP, local hostname resolution, and network-wide filtering on an OpenWrt-based home network.', stack:['OpenWrt','AdGuard Home','DNS','DHCP'] },
+ { slug:'status-page', title:'Deployment availability monitoring', tag:'Monitoring', description:'Checking portfolio deployment status and verifying public website availability.', longDescription:'A practical monitoring workflow that checks Cloudflare Pages deployment results and independently validates whether the public portfolio homepage is reachable. The workflow helps distinguish successful builds from successful site delivery.', stack:['Cloudflare Pages','HTTP','Monitoring'] },
+ { slug:'this-site', title:'SvelteKit portfolio on Cloudflare Pages', tag:'Web & Deployment', description:'A statically generated SvelteKit portfolio deployed from GitHub to Cloudflare Pages.', longDescription:'This portfolio uses SvelteKit, static prerendering, GitHub source control, Cloudflare Pages deployments, and a custom domain. Building it has involved resolving build configuration, asset paths, and prerendering errors.', stack:['SvelteKit','GitHub','Cloudflare Pages','TypeScript'], links:[{label:'Source repository',href:'https://github.com/semi-colonel/svelte-profile'}] }
 ];
