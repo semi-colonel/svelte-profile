@@ -7,25 +7,24 @@
 </script>
 
 <svelte:head>
-	<title>Vaibhav Salunke — Developer Profile</title>
+	<title>Vaibhav Salunke | Infrastructure, Automation & Cloud</title>
 	<meta
 		name="description"
-		content="Vaibhav Salunke — developer and homelab enthusiast in Pune, India. Self-hosted infrastructure, tools, and projects."
+		content="Infrastructure and automation engineer focused on Python, Linux, cloud deployments, networking and self-hosted systems."
 	/>
 </svelte:head>
 
 <section class="hero">
 	<div class="container hero-grid">
 		<div>
-			<p class="eyebrow">Pune, India · Homelab &amp; Systems</p>
-			<h1>Building small, reliable things on hardware I own.</h1>
+			<p class="eyebrow">Pune, India · Infrastructure · Automation · Cloud</p>
+			<h1>Building reliable systems, automating infrastructure, and solving production problems.</h1>
 			<p class="lead">
-				I'm Vaibhav — a developer who runs half my life off a homelab rack, ships self-hosted
-				tools, and writes about what breaks along the way.
+				I work with Python automation, Linux deployments, REST APIs and infrastructure troubleshooting. My homelab is where I explore networking, virtualization, containers and cloud services hands-on.
 			</p>
 			<div class="cta-row">
 				<a href="#work" class="btn btn-primary">See my projects</a>
-				<a href="#contact" class="btn btn-ghost">Get in touch</a>
+				<a href="#contact" class="btn btn-ghost">Get in touch</a>\n\t\t\t\t<a href="/experience" class="btn btn-ghost">Professional experience</a>
 			</div>
 		</div>
 		<!-- <div class="terminal" aria-hidden="true">
@@ -41,7 +40,7 @@
 				/>
 				<div class="profile-meta">
 					<p class="profile-name">Vaibhav Salunke</p>
-					<p class="profile-tag">Developer · Homelab · Electronics</p>
+					<p class="profile-tag">Infrastructure · Automation · Linux</p>
 				</div>
 			</div>
 
@@ -51,23 +50,12 @@
 		<span class="accent">vaibhav@homelab</span>
 
 		$ uptime
-		14 days, 6:32 -- all services nominal
+		portfolio deployed via Cloudflare Pages
 
 		$ ls ~/projects
 		media-stack/  dns-sinkhole/
 		status-page/  this-site/</pre>
 		</div>
-			<pre>$ whoami
-<span class="accent">vaibhav@homelab</span>
-
-<!-- Says Uptime here, random comment -->
-$ uptime
-14 days, 6:32 — all services nominal
-
-
-$ ls ~/projects
-media-stack/  dns-sinkhole/
-status-page/  this-site/</pre>
 		</div>
 	</div>
 </section>
@@ -76,7 +64,7 @@ status-page/  this-site/</pre>
 	<div class="container">
 		<div class="section-head">
 			<h2>Selected projects</h2>
-			<p class="muted">A mix of homelab infrastructure, self-hosted tools, and the odd weekend build.</p>
+			<p class="muted">Hands-on infrastructure, networking, deployment and automation projects.</p>
 		</div>
 		<div class="projects-grid">
 			{#each featured as project (project.slug)}
@@ -168,7 +156,7 @@ status-page/  this-site/</pre>
 				I like taking things off the cloud and running them myself — partly for the cost savings,
 				mostly because I enjoy understanding how the whole stack fits together.
 			</p>
-			<p>Based in Pune, India. When I'm not tuning a Docker Compose file, I'm probably breaking it.</p>
+			<p>Outside work I run a homelab to deepen my experience with Docker, OpenWrt, Proxmox and cloud networking.</p>
 		</div>
 		<div>
 			<h3 class="toolbox-title">Toolbox</h3>
