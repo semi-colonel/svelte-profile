@@ -20,7 +20,7 @@
 
 	const navLinks = [
 		{ href: '/#work', label: 'Work' },
-\t\t{ href: '/experience', label: 'Experience' },
+		{ href: '/experience', label: 'Experience' },
 		{ href: '/#about', label: 'About' },
 		{ href: '/#contact', label: 'Contact' }
 	];
