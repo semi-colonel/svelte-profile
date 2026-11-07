@@ -34,7 +34,7 @@
 		<div class="hero-side">
 			<div class="profile-card">
 				<img
-					src="/DSC00310.JPG"
+					src="/Untitled.jpeg"
 					alt="Portrait of Vaibhav Salunke"
 					width="320"
 					height="320"
