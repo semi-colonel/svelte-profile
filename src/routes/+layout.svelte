@@ -64,9 +64,11 @@
 
 <footer id="contact">
 	<div class="container footer-row">
-		<div>
-			<h3>Let's talk.</h3>
-			<p class="muted"><a href="mailto:vaibhav@vbvslnk.org">vaibhav@vbvslnk.org</a></p>
+		<div class="contact-block">
+			<p class="contact-eyebrow">Get in touch</p>
+			<h3>Let's build something useful.</h3>
+			<p class="muted contact-intro">Open to conversations about DevOps, infrastructure, Linux, cloud and automation roles.</p>
+			<a class="contact-email" href="mailto:vbvsalunke@gmail.com">vbvsalunke@gmail.com ↗</a>
 		</div>
 		<div class="socials">
 			<a href="https://github.com/semi-colonel" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -143,6 +145,12 @@
 	.footer-row h3 {
 		font-size: var(--text-lg);
 	}
+	.contact-block { max-width: 580px; }
+	.contact-eyebrow { color: var(--color-primary); font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: var(--space-3); }
+	.contact-intro { line-height: 1.7; margin: var(--space-3) 0 var(--space-5); }
+	.contact-email { display: inline-block; color: var(--color-primary); font-weight: 700; font-size: var(--text-lg); text-decoration: underline; text-underline-offset: 5px; overflow-wrap: anywhere; }
+	.contact-email:hover { opacity: .8; }
+	.contact-email:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
 	.muted {
 		color: var(--color-text-muted);
 	}
