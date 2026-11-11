@@ -28,7 +28,14 @@
 				</div>
 				<p class="hero-links"><a href="#contact">Contact me</a><span aria-hidden="true">·</span><a href="https://docs.google.com/document/d/1ElqFP7cjvZJlhA_f6EpY-MZGHZ_yRSs9DuAjOteiP1I/export?format=pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
 		</div>
-		<!--
+		<div class="hero-side">
+			<div class="profile-card">
+				<img src="/Untitled.jpeg" alt="Portrait of Vaibhav Salunke" width="320" height="320" loading="lazy" />
+				<div class="profile-meta">
+					<p class="profile-name">Vaibhav Salunke</p>
+					<p class="profile-tag">Infrastructure · Automation · Linux</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
