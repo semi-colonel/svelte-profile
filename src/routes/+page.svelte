@@ -17,47 +17,18 @@
 <section class="hero">
 	<div class="container hero-grid">
 		<div>
-			<p class="eyebrow">Pune, India · Infrastructure · Automation · Cloud</p>
-			<h1>Building reliable systems, automating infrastructure, and solving production problems.</h1>
+			<p class="eyebrow">Infrastructure & Automation Engineer · Python · Linux · Cloud</p>
+			<h1>I build automation tools and keep infrastructure running.</h1>
 			<p class="lead">
-				I work with Python automation, Linux deployments, REST APIs and infrastructure troubleshooting. My homelab is where I explore networking, virtualization, containers and cloud services hands-on.
+				I’m Vaibhav, an engineer with hands-on experience in Python automation, Linux deployments and production troubleshooting. Explore my professional work and the homelab projects where I test new ideas.
 			</p>
 			<div class="cta-row">
-				<a href="#work" class="btn btn-primary">See my projects</a>
-				<a href="#contact" class="btn btn-ghost">Get in touch</a>
-\t\t\t\t<a href="/experience" class="btn btn-ghost">Professional experience</a>
-				<a href="https://docs.google.com/document/d/1ElqFP7cjvZJlhA_f6EpY-MZGHZ_yRSs9DuAjOteiP1I/export?format=pdf" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
-			</div>
-		</div>
-		<!-- <div class="terminal" aria-hidden="true">
-			<div class="terminal-bar"><span></span><span></span><span></span></div> -->
-		<div class="hero-side">
-			<div class="profile-card">
-				<img
-					src="/Untitled.jpeg"
-					alt="Portrait of Vaibhav Salunke"
-					width="320"
-					height="320"
-					loading="lazy"
-				/>
-				<div class="profile-meta">
-					<p class="profile-name">Vaibhav Salunke</p>
-					<p class="profile-tag">Infrastructure · Automation · Linux</p>
+					<a href="#work" class="btn btn-primary">Explore my projects</a>
+					<a href="/experience" class="btn btn-ghost">View work experience</a>
 				</div>
-			</div>
-
-			<div class="terminal" aria-hidden="true">
-				<div class="terminal-bar"><span></span><span></span><span></span></div>
-				<pre>$ whoami
-		<span class="accent">vaibhav@homelab</span>
-
-		$ uptime
-		portfolio deployed via Cloudflare Pages
-
-		$ ls ~/projects
-		media-stack/  dns-sinkhole/
-		status-page/  this-site/</pre>
+				<p class="hero-links"><a href="#contact">Contact me</a><span aria-hidden="true">·</span><a href="https://docs.google.com/document/d/1ElqFP7cjvZJlhA_f6EpY-MZGHZ_yRSs9DuAjOteiP1I/export?format=pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
 		</div>
+		<!--
 		</div>
 	</div>
 </section>
@@ -66,7 +37,7 @@
 	<div class="container">
 		<div class="section-head">
 			<h2>Selected projects</h2>
-			<p class="muted">Hands-on infrastructure, networking, deployment and automation projects.</p>
+			<p class="muted">Practical examples of what I built, configured and learned.</p>
 		</div>
 		<div class="projects-grid">
 			{#each featured as project (project.slug)}
@@ -113,7 +84,7 @@
 			<p class="eyebrow">Hardware</p>
 			<h2>Electronics tinkering</h2>
 			<p class="muted">
-				When I’m not breaking Docker, I’m usually burning fingers on soldering irons –
+				Outside software, I experiment with electronics —
 				building small boards, fixing random gear, or wiring up sensors to talk to my
 				homelab.
 			</p>
@@ -155,7 +126,7 @@
 		<div>
 			<h2>About</h2>
 			<p>
-				I like taking things off the cloud and running them myself — partly for the cost savings,
+				I enjoy understanding systems end to end — partly for the cost savings,
 				mostly because I enjoy understanding how the whole stack fits together.
 			</p>
 			<p>Outside work I run a homelab to deepen my experience with Docker, OpenWrt, Proxmox and cloud networking.</p>
@@ -224,6 +195,9 @@
 			grid-template-columns: 1fr;
 		}
 	}
+	.hero-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); }
+	.hero-links a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+	.hero-links a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
 	.hero {
 		padding-block: var(--space-32) var(--space-20);
 		position: relative;
